@@ -1,0 +1,123 @@
+[gd_scene load_steps=20 format=3 uid="uid://cajx5hu484se3"]
+
+[ext_resource type="Script" path="res://scripts/fire.gd" id="1_rj74q"]
+
+[sub_resource type="Gradient" id="Gradient_dshss"]
+offsets = PackedFloat32Array(0, 0.321138, 0.788618)
+colors = PackedColorArray(1, 0.870588, 0, 1, 0.768627, 0.14902, 0, 0.47451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ba6mu"]
+gradient = SubResource("Gradient_dshss")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_7tcoj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.26508, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tuekh"]
+curve = SubResource("Curve_7tcoj")
+
+[sub_resource type="Curve" id="Curve_caw27"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.47541), -1.52131, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_f2be7"]
+curve = SubResource("Curve_caw27")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kuhsl"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 0.5, 1)
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_f2be7")
+color = Color(0, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_tuekh")
+
+[sub_resource type="Gradient" id="Gradient_umpn5"]
+offsets = PackedFloat32Array(0, 0.641122)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kbi16"]
+gradient = SubResource("Gradient_umpn5")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_gapmy"]
+_data = [Vector2(0, 0), 0.0, 7.52388, 0, 0, Vector2(0.297893, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.3846, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kpsa2"]
+curve = SubResource("Curve_gapmy")
+
+[sub_resource type="Gradient" id="Gradient_5la0s"]
+offsets = PackedFloat32Array(0, 0.719192, 0.95082)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0.255522, 3.71509e-07, 6.01634e-08, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_do8g8"]
+gradient = SubResource("Gradient_5la0s")
+
+[sub_resource type="Curve" id="Curve_8i6he"]
+_data = [Vector2(0, 0), 0.0, 14.4817, 0, 0, Vector2(0.154215, 1), 0.0, 0.0, 0, 0, Vector2(0.989464, 0.6102), -1.28361, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_psfeg"]
+curve = SubResource("Curve_8i6he")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6d06j"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
+angle_min = -60.0
+angle_max = 60.0
+gravity = Vector3(0, -980, 0)
+scale_min = 10.0
+scale_max = 20.0
+scale_curve = SubResource("CurveTexture_psfeg")
+color_ramp = SubResource("GradientTexture1D_do8g8")
+alpha_curve = SubResource("CurveTexture_kpsa2")
+turbulence_enabled = true
+turbulence_noise_scale = 4.0
+turbulence_noise_speed_random = 0.4
+
+[sub_resource type="Gradient" id="Gradient_k63q3"]
+offsets = PackedFloat32Array(0.508411, 0.71215)
+colors = PackedColorArray(0.996078, 0.996078, 0.0823529, 1, 1, 0.654902, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a5dgj"]
+gradient = SubResource("Gradient_k63q3")
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Fire" type="Node2D"]
+script = ExtResource("1_rj74q")
+
+[node name="Light" type="PointLight2D" parent="."]
+energy = 2.0
+texture = SubResource("GradientTexture2D_ba6mu")
+metadata/_edit_lock_ = true
+
+[node name="Char" type="GPUParticles2D" parent="."]
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_kuhsl")
+texture = SubResource("GradientTexture2D_kbi16")
+lifetime = 10.0
+local_coords = true
+
+[node name="Fire" type="GPUParticles2D" parent="."]
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_6d06j")
+local_coords = true
+trail_enabled = true
+trail_lifetime = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_a5dgj")

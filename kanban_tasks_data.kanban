@@ -1,0 +1,84 @@
+{
+	"categories": [
+		{
+			"uuid": "e8940f6e-e357-4140-8739-9c85034ea308",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "986fc649-62e0-40e0-a4ab-f8e942ab4f81",
+			"title": "Todo",
+			"tasks": [
+				"fa35fe9a-8915-4fc3-a451-72ccebdaf538",
+				"ec4d54cb-1d5b-4c73-8415-1baca5497704"
+			]
+		},
+		{
+			"uuid": "14b695cf-bf6c-4328-b195-2c02f470dd91",
+			"title": "Doing",
+			"tasks": [
+				"b98183d2-0ea2-40e1-b5e2-15a1b8e76341",
+				"ee795a4d-a9a8-4f80-ad08-9474ccfd5cdf"
+			]
+		},
+		{
+			"uuid": "4bc0b53e-88b5-487d-90cc-affb5de6d70f",
+			"title": "Done",
+			"tasks": [
+				"27f931fd-b2ae-4291-a516-bd5d30d8cd17"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "fa35fe9a-8915-4fc3-a451-72ccebdaf538",
+			"title": "Water",
+			"description": "",
+			"category": "e8940f6e-e357-4140-8739-9c85034ea308",
+			"steps": []
+		},
+		{
+			"uuid": "ec4d54cb-1d5b-4c73-8415-1baca5497704",
+			"title": "Fan Wind",
+			"description": "",
+			"category": "e8940f6e-e357-4140-8739-9c85034ea308",
+			"steps": []
+		},
+		{
+			"uuid": "b98183d2-0ea2-40e1-b5e2-15a1b8e76341",
+			"title": "Player Movement",
+			"description": "",
+			"category": "e8940f6e-e357-4140-8739-9c85034ea308",
+			"steps": []
+		},
+		{
+			"uuid": "27f931fd-b2ae-4291-a516-bd5d30d8cd17",
+			"title": "Fire Effects",
+			"description": "",
+			"category": "e8940f6e-e357-4140-8739-9c85034ea308",
+			"steps": []
+		},
+		{
+			"uuid": "ee795a4d-a9a8-4f80-ad08-9474ccfd5cdf",
+			"title": "HUD",
+			"description": "",
+			"category": "e8940f6e-e357-4140-8739-9c85034ea308",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"986fc649-62e0-40e0-a4ab-f8e942ab4f81"
+			],
+			[
+				"14b695cf-bf6c-4328-b195-2c02f470dd91"
+			],
+			[
+				"4bc0b53e-88b5-487d-90cc-affb5de6d70f"
+			]
+		]
+	}
+}
