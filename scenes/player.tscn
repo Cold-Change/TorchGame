@@ -1,8 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl22lxek4yc1o"]
+[gd_scene load_steps=11 format=3 uid="uid://dl22lxek4yc1o"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vuqsl"]
 [ext_resource type="PackedScene" uid="uid://cajx5hu484se3" path="res://scenes/fire.tscn" id="2_icih1"]
+[ext_resource type="Shader" path="res://resources/wobble.gdshader" id="2_x6lv8"]
 [ext_resource type="Texture2D" uid="uid://bvrk2ah2cc3vm" path="res://assets/pillar.png" id="3_1ghws"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cn6d2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vxlic"]
+width = 2048
+height = 2048
+seamless = true
+noise = SubResource("FastNoiseLite_cn6d2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5egvq"]
+shader = ExtResource("2_x6lv8")
+shader_parameter/strength = 5.0
+shader_parameter/uv_scaling = 1.0
+shader_parameter/movement_direction = Vector2(1, 0)
+shader_parameter/movement_speed = 0.1
+shader_parameter/NOISE_TEXTURE = SubResource("NoiseTexture2D_vxlic")
+
+[sub_resource type="Gradient" id="Gradient_8clrw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vp2wq"]
+gradient = SubResource("Gradient_8clrw")
+width = 128
+height = 128
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cewq5"]
 radius = 7.07107
@@ -12,12 +36,21 @@ motion_mode = 1
 script = ExtResource("1_vuqsl")
 metadata/_edit_group_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_5egvq")
+position = Vector2(3.12924e-05, -269)
+scale = Vector2(2.38906, 2.64618)
+texture = SubResource("GradientTexture2D_vp2wq")
+
 [node name="Pillar" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(0, -71)
 texture = ExtResource("3_1ghws")
 hframes = 4
 
 [node name="Fire" parent="." instance=ExtResource("2_icih1")]
+z_index = 2
 position = Vector2(-1, -172)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
