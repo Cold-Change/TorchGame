@@ -1,4 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cajx5hu484se3"]
+[gd_scene load_steps=4 format=3 uid="uid://cajx5hu484se3"]
+
+[ext_resource type="PackedScene" uid="uid://ee2t242i5va7" path="res://ParticleEffects/char.tscn" id="1_hf5b6"]
+[ext_resource type="PackedScene" uid="uid://bmy0iy4ksrhs7" path="res://ParticleEffects/fire.tscn" id="2_5d16r"]
 
 [sub_resource type="Environment" id="Environment_ogexk"]
 background_mode = 3
@@ -9,71 +12,14 @@ glow_blend_mode = 1
 glow_hdr_threshold = 0.6
 glow_hdr_scale = 0.5
 
-[sub_resource type="Gradient" id="Gradient_bh5ce"]
-offsets = PackedFloat32Array(0, 0.841121, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.201527, 0.201527, 0.201527, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4o66g"]
-gradient = SubResource("Gradient_bh5ce")
-
-[sub_resource type="Curve" id="Curve_caw27"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_f2be7"]
-curve = SubResource("Curve_caw27")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kuhsl"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 3.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.8
-scale_curve = SubResource("CurveTexture_f2be7")
-color_ramp = SubResource("GradientTexture1D_4o66g")
-
-[sub_resource type="Gradient" id="Gradient_5la0s"]
-offsets = PackedFloat32Array(0, 0.540984, 0.95082)
-colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0.255522, 3.71509e-07, 6.01634e-08, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_do8g8"]
-gradient = SubResource("Gradient_5la0s")
-
-[sub_resource type="Curve" id="Curve_8i6he"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.296703), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_psfeg"]
-curve = SubResource("Curve_8i6he")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6d06j"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 1.0
-angle_min = -45.0
-angle_max = 45.0
-gravity = Vector3(0, -100, 0)
-scale_max = 2.0
-scale_curve = SubResource("CurveTexture_psfeg")
-color_ramp = SubResource("GradientTexture1D_do8g8")
-turbulence_enabled = true
-turbulence_noise_scale = 4.0
-turbulence_noise_speed_random = 0.4
-
 [node name="ParticleEffects" type="Node2D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ogexk")
 
-[node name="Char" type="GPUParticles2D" parent="."]
-amount = 300
-process_material = SubResource("ParticleProcessMaterial_kuhsl")
-lifetime = 10.0
+[node name="Char" parent="." instance=ExtResource("1_hf5b6")]
 
-[node name="Fire" type="GPUParticles2D" parent="."]
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_6d06j")
-lifetime = 0.8
+[node name="Fire" parent="." instance=ExtResource("2_5d16r")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://coxgtkxdjbq0q"]
+
+[ext_resource type="TileSet" uid="uid://dwfqtas83xbvk" path="res://Tilemap/DungeonTileset.tres" id="1_sc15s"]
+
+[node name="DungeonTilemap" type="TileMap"]
+y_sort_enabled = true
+tile_set = ExtResource("1_sc15s")
+format = 2
+layer_0/y_sort_enabled = true

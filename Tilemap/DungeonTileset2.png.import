@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5oddylwjwtf"
-path="res://.godot/imported/MCBlocksColorOutline.png-ef00f6f7d04ee3e9966d53947aed2a40.ctex"
+uid="uid://ca2jgc364a1cd"
+path="res://.godot/imported/DungeonTileset2.png-acfb6684603b582be352413c45bd7d74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemap/MCBlocksColorOutline.png"
-dest_files=["res://.godot/imported/MCBlocksColorOutline.png-ef00f6f7d04ee3e9966d53947aed2a40.ctex"]
+source_file="res://Tilemap/DungeonTileset2.png"
+dest_files=["res://.godot/imported/DungeonTileset2.png-acfb6684603b582be352413c45bd7d74.ctex"]
 
 [params]
 

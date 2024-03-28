@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b84j5u0lvod3m"
-path="res://.godot/imported/DungeonIsometricTileset.png-4b2600aab9e8fee4ea448b913dc1e003.ctex"
+uid="uid://d3vgydfoh00yb"
+path="res://.godot/imported/Torch2.png-7c5175add7a614c15eb84a2e955f92b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemap/DungeonIsometricTileset.png"
-dest_files=["res://.godot/imported/DungeonIsometricTileset.png-4b2600aab9e8fee4ea448b913dc1e003.ctex"]
+source_file="res://Player/Torch2.png"
+dest_files=["res://.godot/imported/Torch2.png-7c5175add7a614c15eb84a2e955f92b0.ctex"]
 
 [params]
 
