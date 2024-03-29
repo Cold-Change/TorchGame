@@ -1,8 +1,2 @@
-res://Player/Player3.tscn
-res://Tilemap/DungeonTileset.tres
 res://Levels/test_level.tscn
-res://Player/Player.tscn
-res://Map Assets/wall_torch_left.tscn
-res://Map Assets/wall_torch_left.gd
-res://ParticleEffects/fire2.tscn
-res://Player/Player2.tscn
+res://Tilemap/DungeonTileset.tres
