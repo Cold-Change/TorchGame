@@ -1,2 +1,5 @@
 res://Levels/test_level.tscn
 res://Tilemap/DungeonTileset.tres
+res://Player/Player.tscn
+res://ParticleEffects/fire2.tscn
+res://Map Assets/wall_torch_left.tscn
