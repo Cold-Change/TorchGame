@@ -1,3 +1,6 @@
-res://Tilemap/DungeonTilemap.tscn
-res://Tilemap/DungeonTileset.tres
 res://Levels/test_level.tscn
+res://Tilemap/DungeonTileset.tres
+res://Tilemap/DungeonTilemap.tscn
+res://Player/Player3.tscn
+res://ParticleEffects/fire2.tscn
+res://Player/Player.gd

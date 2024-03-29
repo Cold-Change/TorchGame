@@ -12,16 +12,6 @@ func _physics_process(delta):
 
 func manageAnimations(direction):
 	if direction:
-		#if animation_player.current_animation != "Walk":
-			#animation_player.play("Transition")
-			#print("Transition to walk")
-			#await animation_player.animation_finished
 		animation_player.play("Walk")
-		print("Walking")
 	else:
-		if animation_player.current_animation != "Idle":
-			animation_player.play("Transition")
-			print("Transition to idle")
-			await animation_player.animation_finished
 		animation_player.play("Idle")
-		print("Idling")

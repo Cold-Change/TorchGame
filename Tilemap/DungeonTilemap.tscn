@@ -6,4 +6,17 @@
 y_sort_enabled = true
 tile_set = ExtResource("1_sc15s")
 format = 2
+layer_0/name = "Floor"
 layer_0/y_sort_enabled = true
+layer_1/name = "Walls 1"
+layer_1/y_sort_enabled = true
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Walls 2"
+layer_2/y_sort_enabled = true
+layer_2/z_index = 2
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Walls 3"
+layer_3/y_sort_enabled = true
+layer_3/z_index = 3
+layer_3/tile_data = PackedInt32Array()
