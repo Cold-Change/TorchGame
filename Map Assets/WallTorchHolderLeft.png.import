@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crfyhovagss0b"
-path="res://.godot/imported/Torch3.png-c27c0d4d1683412df923d1329685cd85.ctex"
+uid="uid://b7gko7vx06b1v"
+path="res://.godot/imported/WallTorchHolderLeft.png-1fa235f4572cd132588fd0de857b9ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Torch3.png"
-dest_files=["res://.godot/imported/Torch3.png-c27c0d4d1683412df923d1329685cd85.ctex"]
+source_file="res://Map Assets/WallTorchHolderLeft.png"
+dest_files=["res://.godot/imported/WallTorchHolderLeft.png-1fa235f4572cd132588fd0de857b9ca2.ctex"]
 
 [params]
 

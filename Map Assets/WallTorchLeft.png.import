@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3vgydfoh00yb"
-path="res://.godot/imported/Torch2.png-7c5175add7a614c15eb84a2e955f92b0.ctex"
+uid="uid://cinbooypnotpr"
+path="res://.godot/imported/WallTorchLeft.png-7314db17ff3b7d2bef2a6f50531e3013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Torch2.png"
-dest_files=["res://.godot/imported/Torch2.png-7c5175add7a614c15eb84a2e955f92b0.ctex"]
+source_file="res://Map Assets/WallTorchLeft.png"
+dest_files=["res://.godot/imported/WallTorchLeft.png-7314db17ff3b7d2bef2a6f50531e3013.ctex"]
 
 [params]
 

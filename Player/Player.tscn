@@ -1,26 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://cl6jbk17doxbe"]
+[gd_scene load_steps=12 format=3 uid="uid://c6frwde45xrmv"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_kjxj7"]
-[ext_resource type="PackedScene" uid="uid://bmy0iy4ksrhs7" path="res://ParticleEffects/fire.tscn" id="2_ovl46"]
-[ext_resource type="Texture2D" uid="uid://d2tkug3o2dwpv" path="res://Player/Torch.png" id="3_qk0hx"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_kvrki"]
+[ext_resource type="Texture2D" uid="uid://crfyhovagss0b" path="res://Player/Torch.png" id="2_8qyjr"]
+[ext_resource type="PackedScene" uid="uid://vhki1ammus76" path="res://ParticleEffects/fire2.tscn" id="3_dm7nk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a45u2"]
-radius = 3.0
-height = 16.0
-
-[sub_resource type="Gradient" id="Gradient_dshss"]
-offsets = PackedFloat32Array(0, 0.321138, 0.788618)
-colors = PackedColorArray(1, 0.870588, 0, 1, 0.768627, 0.14902, 0, 0.47451, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjk45"]
-gradient = SubResource("Gradient_dshss")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+radius = 4.0
+height = 14.0
 
 [sub_resource type="Animation" id="Animation_lhxdo"]
 resource_name = "Idle"
-length = 0.8
+length = 2.0
 loop_mode = 1
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -28,10 +20,10 @@ tracks/0/path = NodePath("Torch:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)]
+"values": [Vector2(0, -8), Vector2(0, -7), Vector2(0, -8), Vector2(0, -7), Vector2(0, -8)]
 }
 
 [sub_resource type="Animation" id="Animation_hcoum"]
@@ -46,7 +38,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -61,9 +53,10 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_ul7aw"]
-resource_name = "Transition"
-length = 0.2
+[sub_resource type="Animation" id="Animation_iok5n"]
+resource_name = "Walk"
+loop_mode = 1
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,10 +64,10 @@ tracks/0/path = NodePath("Torch:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,47 +76,40 @@ tracks/1/path = NodePath("Torch:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_iok5n"]
-resource_name = "Walk"
-loop_mode = 1
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Torch:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.7, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.349066, 0.349066, -0.349066, -0.349066, -2.98023e-08]
+"values": [0.0, 0.436332, 0.0, -0.436332, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nsgph"]
 _data = {
 "Idle": SubResource("Animation_lhxdo"),
 "RESET": SubResource("Animation_hcoum"),
-"Transition": SubResource("Animation_ul7aw"),
 "Walk": SubResource("Animation_iok5n")
 }
+
+[sub_resource type="Gradient" id="Gradient_1wwbf"]
+offsets = PackedFloat32Array(0, 0.321138, 0.788618)
+colors = PackedColorArray(1, 0.870588, 0, 1, 0.768627, 0.14902, 0, 0.47451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjk45"]
+gradient = SubResource("Gradient_1wwbf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r8xpr"]
+radius = 1.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(174, 110)
 motion_mode = 1
-script = ExtResource("1_kjxj7")
+script = ExtResource("1_kvrki")
 speed = 50
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 26)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_a45u2")
 
@@ -131,25 +117,31 @@ shape = SubResource("CapsuleShape2D_a45u2")
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="Torch" type="Sprite2D" parent="."]
-z_index = 1
-y_sort_enabled = true
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_qk0hx")
-
-[node name="PointLight2D" type="PointLight2D" parent="Torch"]
-position = Vector2(0, -44)
-scale = Vector2(2, 2)
-energy = 2.0
-texture = SubResource("GradientTexture2D_wjk45")
-
-[node name="Fire" parent="Torch" instance=ExtResource("2_ovl46")]
-z_index = 1
-position = Vector2(0, -44)
-scale = Vector2(2, 2)
-amount = 300
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_nsgph")
 }
+
+[node name="Torch" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -6)
+texture = ExtResource("2_8qyjr")
+offset = Vector2(0, -4)
+
+[node name="PointLight2D" type="PointLight2D" parent="Torch"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -14)
+energy = 2.0
+texture = SubResource("GradientTexture2D_wjk45")
+offset = Vector2(0, -6)
+
+[node name="Fire" parent="Torch" instance=ExtResource("3_dm7nk")]
+position = Vector2(0, -14)
+scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="Torch/Fire"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch/Fire/Area2D"]
+shape = SubResource("CircleShape2D_r8xpr")
