@@ -6,8 +6,9 @@ extends CharacterBody2D
 @onready var fire_hurt_box = $Torch/Fire/FireHurtBox
 
 @onready var lit = true
+@onready var speed = 50
 
-@export var speed : int
+@export var next_level : PackedScene
 
 func _physics_process(delta):
 	point_light_2d.enabled = lit
@@ -28,6 +29,13 @@ func manageAnimations(direction):
 func _on_fire_hurt_box_area_entered(area):
 	if area.collision_layer == 2:
 		death()
+	elif area.collision_layer == 4:
+		await Transitions.FadeToBlack()
+		if next_level:
+			get_tree().change_scene_to_packed(next_level)
+		else:
+			get_tree().change_scene_to_file("res://Levels/game_over.tscn")
+		Transitions.FadeFromBlack()
 
 func death():
 	print("Player dies")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://tlcwkfgwpyy0"]
+[gd_scene load_steps=8 format=3 uid="uid://tlcwkfgwpyy0"]
 
 [ext_resource type="PackedScene" uid="uid://coxgtkxdjbq0q" path="res://Tilemap/DungeonTilemap.tscn" id="1_njj6y"]
 [ext_resource type="PackedScene" uid="uid://c6frwde45xrmv" path="res://Player/Player.tscn" id="2_wb8jo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ciauolctmg7" path="res://Fan/fan_down.tscn" id="4_juivu"]
 [ext_resource type="PackedScene" uid="uid://cu780doimpt5o" path="res://Map Assets/campfire.tscn" id="5_cfnk4"]
 [ext_resource type="PackedScene" uid="uid://cidu3uwrohvvj" path="res://Fan/fan_up.tscn" id="6_exgdl"]
+[ext_resource type="PackedScene" uid="uid://n2qu8qoqg138" path="res://Map Assets/portal.tscn" id="7_y0jkc"]
 
 [node name="TestLevel" type="Node2D"]
 y_sort_enabled = true
@@ -121,3 +122,6 @@ position = Vector2(144, 35)
 [node name="FanUp2" parent="." instance=ExtResource("6_exgdl")]
 position = Vector2(242, 139)
 scale = Vector2(-1, 1)
+
+[node name="Portal" parent="." instance=ExtResource("7_y0jkc")]
+position = Vector2(436, 44)

@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://n2qu8qoqg138"]
+
+[ext_resource type="Texture2D" uid="uid://cmechn30ck4pe" path="res://Map Assets/112x128Portal-Sheet.png" id="1_onibm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti0w8"]
+atlas = ExtResource("1_onibm")
+region = Rect2(0, 0, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koe8k"]
+atlas = ExtResource("1_onibm")
+region = Rect2(112, 0, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc0xy"]
+atlas = ExtResource("1_onibm")
+region = Rect2(224, 0, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxkxs"]
+atlas = ExtResource("1_onibm")
+region = Rect2(336, 0, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11c5n"]
+atlas = ExtResource("1_onibm")
+region = Rect2(448, 0, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xetb0"]
+atlas = ExtResource("1_onibm")
+region = Rect2(560, 0, 112, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3may"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti0w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koe8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc0xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxkxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11c5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xetb0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icvoe"]
+size = Vector2(30.0855, 10.2847)
+
+[node name="Portal" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_f3may")
+autoplay = "default"
+frame_progress = 0.164067
+offset = Vector2(0, -16)
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 5
+position = Vector2(0, -16)
+collision_layer = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-12, -16, 7, -25, 7, 20, -12, 29)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 5
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(14, 15)
+rotation = 0.461444
+shape = SubResource("RectangleShape2D_icvoe")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-22, 34)
+rotation = 0.461444
+shape = SubResource("RectangleShape2D_icvoe")

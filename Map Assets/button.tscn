@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://l7ormynex0db"]
+
+[ext_resource type="Texture2D" uid="uid://yx4dwq2lky0j" path="res://Map Assets/ButtonDown.png" id="1_ox0lk"]
+[ext_resource type="Texture2D" uid="uid://b8idu6twcuqcx" path="res://Map Assets/ButtonUp.png" id="2_hfbjf"]
+
+[node name="Button" type="Node2D"]
+
+[node name="ButtonDown" type="Sprite2D" parent="."]
+texture = ExtResource("1_ox0lk")
+
+[node name="ButtonUp" type="Sprite2D" parent="."]
+texture = ExtResource("2_hfbjf")
