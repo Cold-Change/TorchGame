@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://cidu3uwrohvvj"]
+
+[ext_resource type="Texture2D" uid="uid://x0jwwamb3njr" path="res://Fan/FanUp.png" id="1_rkx8q"]
+[ext_resource type="PackedScene" uid="uid://bvutq8onmje8n" path="res://ParticleEffects/wind.tscn" id="2_weo1p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5e03o"]
+radius = 18.2224
+height = 186.296
+
+[sub_resource type="Gradient" id="Gradient_tlycd"]
+colors = PackedColorArray(0.968627, 0.14902, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xe7f0"]
+gradient = SubResource("Gradient_tlycd")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="FanUp" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="FanUp" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rkx8q")
+offset = Vector2(0, -14)
+
+[node name="Wind" parent="FanUp" instance=ExtResource("2_weo1p")]
+position = Vector2(-9, -8)
+rotation = -2.0944
+scale = Vector2(2, 2)
+
+[node name="HitBox" type="Area2D" parent="FanUp"]
+z_index = 1
+position = Vector2(10, -40)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanUp/HitBox"]
+position = Vector2(88.9997, -38.0003)
+rotation = -2.0944
+shape = SubResource("CapsuleShape2D_5e03o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FanUp"]
+position = Vector2(0, -14)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FanUp/StaticBody2D"]
+polygon = PackedVector2Array(11, 39, 30, 30, -12, 9, -31, 18)
+
+[node name="PointLight2D" type="PointLight2D" parent="FanUp"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(4, -18)
+energy = 2.0
+texture = SubResource("GradientTexture2D_xe7f0")

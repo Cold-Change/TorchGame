@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu780doimpt5o"]
+
+[ext_resource type="Script" path="res://Map Assets/campfire.gd" id="1_r3byb"]
+[ext_resource type="Texture2D" uid="uid://dnn072tgj2r4u" path="res://Map Assets/CampfireLogs.png" id="2_gqyfy"]
+[ext_resource type="PackedScene" uid="uid://842whfano00q" path="res://ParticleEffects/fire3.tscn" id="3_661qp"]
+
+[sub_resource type="Gradient" id="Gradient_1wwbf"]
+offsets = PackedFloat32Array(0, 0.321138, 0.788618)
+colors = PackedColorArray(1, 0.870588, 0, 1, 0.768627, 0.14902, 0, 0.47451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hpb4t"]
+gradient = SubResource("Gradient_1wwbf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibv2e"]
+radius = 14.0
+
+[node name="Campfire" type="Node2D" groups=["Campfires"]]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_r3byb")
+
+[node name="CampfireLogs" type="Sprite2D" parent="."]
+texture = ExtResource("2_gqyfy")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-3, 12)
+enabled = false
+energy = 2.0
+texture = SubResource("GradientTexture2D_hpb4t")
+offset = Vector2(0, -6)
+texture_scale = 2.0
+
+[node name="Fire" parent="." instance=ExtResource("3_661qp")]
+position = Vector2(-3, 12)
+emitting = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 15)
+shape = SubResource("CircleShape2D_ibv2e")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

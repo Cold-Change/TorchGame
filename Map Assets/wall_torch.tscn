@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://croxlydof5b5d"]
+
+[ext_resource type="Texture2D" uid="uid://cinbooypnotpr" path="res://Map Assets/WallTorch.png" id="1_vhyen"]
+[ext_resource type="Script" path="res://Map Assets/wall_torch.gd" id="2_osmux"]
+[ext_resource type="PackedScene" uid="uid://vhki1ammus76" path="res://ParticleEffects/fire2.tscn" id="2_uh7ei"]
+
+[sub_resource type="Gradient" id="Gradient_dshss"]
+offsets = PackedFloat32Array(0, 0.321138, 0.788618)
+colors = PackedColorArray(1, 0.870588, 0, 1, 0.768627, 0.14902, 0, 0.47451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rs4x4"]
+gradient = SubResource("Gradient_dshss")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pl2k2"]
+radius = 6.0
+
+[node name="WallTorch" type="Sprite2D"]
+z_index = 5
+texture = ExtResource("1_vhyen")
+script = ExtResource("2_osmux")
+lit = true
+
+[node name="Fire" parent="." instance=ExtResource("2_uh7ei")]
+position = Vector2(5, -4)
+amount = 20
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(5, -4)
+scale = Vector2(0.5, 0.5)
+energy = 2.0
+texture = SubResource("GradientTexture2D_rs4x4")
+offset = Vector2(0, -6)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pl2k2")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

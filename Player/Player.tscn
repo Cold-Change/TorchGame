@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6frwde45xrmv"]
+[gd_scene load_steps=13 format=3 uid="uid://c6frwde45xrmv"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_kvrki"]
 [ext_resource type="Texture2D" uid="uid://crfyhovagss0b" path="res://Player/Torch.png" id="2_8qyjr"]
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -6)]
+"values": [Vector2(0, -8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -82,19 +82,48 @@ tracks/1/keys = {
 "values": [0.0, 0.436332, 0.0, -0.436332, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_k1qtp"]
+resource_name = "Death"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -8), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 1.1, 1.5, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, -0.261799, 0.436332, -1.5708, -1.0472, -1.5708, -1.22173, -1.5708, -1.39626, -1.5708]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nsgph"]
 _data = {
+"Death": SubResource("Animation_k1qtp"),
 "Idle": SubResource("Animation_lhxdo"),
 "RESET": SubResource("Animation_hcoum"),
 "Walk": SubResource("Animation_iok5n")
 }
 
-[sub_resource type="Gradient" id="Gradient_1wwbf"]
+[sub_resource type="Gradient" id="Gradient_ciqf2"]
 offsets = PackedFloat32Array(0, 0.321138, 0.788618)
 colors = PackedColorArray(1, 0.870588, 0, 1, 0.768627, 0.14902, 0, 0.47451, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wjk45"]
-gradient = SubResource("Gradient_1wwbf")
+gradient = SubResource("Gradient_ciqf2")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -125,14 +154,14 @@ libraries = {
 [node name="Torch" type="Sprite2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -6)
+position = Vector2(0, -8)
 texture = ExtResource("2_8qyjr")
 offset = Vector2(0, -4)
 
 [node name="PointLight2D" type="PointLight2D" parent="Torch"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -14)
+position = Vector2(0, -8)
 energy = 2.0
 texture = SubResource("GradientTexture2D_wjk45")
 offset = Vector2(0, -6)
@@ -141,7 +170,10 @@ offset = Vector2(0, -6)
 position = Vector2(0, -14)
 scale = Vector2(2, 2)
 
-[node name="Area2D" type="Area2D" parent="Torch/Fire"]
+[node name="FireHurtBox" type="Area2D" parent="Torch/Fire"]
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch/Fire/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch/Fire/FireHurtBox"]
 shape = SubResource("CircleShape2D_r8xpr")
+
+[connection signal="area_entered" from="Torch/Fire/FireHurtBox" to="." method="_on_fire_hurt_box_area_entered"]

@@ -1,35 +1,40 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711681398
+::res://::1711934611
 icon.svg::CompressedTexture2D::2441669567692126832::1711564738::1711564738::1::::<><>::
 README.md::TextFile::-1::1711564738::0::1::::<><>::
-::res://addons/::1711564736
-::res://addons/godot-git-plugin/::1711370803
-git_plugin.gdextension::GDExtension::-1::1711370803::0::1::::<><>::
-plugin.cfg::TextFile::-1::1711370803::0::1::::<><>::
-THIRDPARTY.md::TextFile::-1::1711370803::0::1::::<><>::
-::res://addons/godot-git-plugin/linux/::1711370803
-::res://addons/godot-git-plugin/macos/::1711370803
-::res://addons/godot-git-plugin/win64/::1711681371
-::res://Fan/::1711681410
+::res://Autoload/::1711934700
+Globals.gd::GDScript::-1::1711929460::0::1::::<>Node<>::
+Transitions.gd::GDScript::-1::1711931941::0::1::::<>CanvasLayer<>::
+Transitions.tscn::PackedScene::961036154469757539::1711934700::0::1::::<><>::res://Autoload/Transitions.gd
+::res://Fan/::1711934700
 64x80FanDown-Sheet.png::CompressedTexture2D::1038663788620294365::1711681410::1711681410::1::::<><>::
-FanUp.png::CompressedTexture2D::1666539743988425575::1711681410::1711681410::1::::<><>::
-::res://Levels/::1711681854
-test_level.tscn::PackedScene::1356457439128867073::1711681854::0::1::::<><>::uid://coxgtkxdjbq0q::::res://Tilemap/DungeonTilemap.tscn<>uid://c6frwde45xrmv::::res://Player/Player.tscn<>uid://croxlydof5b5d::::res://Map Assets/wall_torch_left.tscn
-::res://Map Assets/::1711681854
+FanUp.png::CompressedTexture2D::1666539743988425575::1711846517::1711846518::1::::<><>::
+fan_down.tscn::PackedScene::4707268087795908916::1711934700::0::1::::<><>::uid://o2ev125d7fer::::res://Fan/64x80FanDown-Sheet.png<>uid://bvutq8onmje8n::::res://ParticleEffects/wind.tscn
+fan_up.tscn::PackedScene::5341810677081417951::1711934700::0::1::::<><>::uid://x0jwwamb3njr::::res://Fan/FanUp.png<>uid://bvutq8onmje8n::::res://ParticleEffects/wind.tscn
+::res://Levels/::1711934700
+test_level.tscn::PackedScene::1356457439128867073::1711934700::0::1::::<><>::uid://coxgtkxdjbq0q::::res://Tilemap/DungeonTilemap.tscn<>uid://c6frwde45xrmv::::res://Player/Player.tscn<>uid://croxlydof5b5d::::res://Map Assets/wall_torch.tscn<>uid://b8ciauolctmg7::::res://Fan/fan_down.tscn<>uid://cu780doimpt5o::::res://Map Assets/campfire.tscn
+::res://Map Assets/::1711936070
+ButtonDown.png::CompressedTexture2D::1733780267300545819::1711936070::1711936070::1::::<><>::
+ButtonUp.png::CompressedTexture2D::4719387071215240283::1711936070::1711936070::1::::<><>::
+campfire.gd::GDScript::-1::1711932074::0::1::::<>Node2D<>::
+campfire.tscn::PackedScene::6244726813463122574::1711934700::0::1::::<><>::res://Map Assets/campfire.gd<>uid://dnn072tgj2r4u::::res://Map Assets/CampfireLogs.png<>uid://842whfano00q::::res://ParticleEffects/fire3.tscn
+CampfireLogs.png::CompressedTexture2D::8100130447168078746::1711918326::1711918327::1::::<><>::
+WallTorch.png::CompressedTexture2D::5361275518502357755::1711677176::1711849445::1::::<><>::
 WallTorchHolderLeft.png::CompressedTexture2D::4645483831944570165::1711677176::1711677176::1::::<><>::
-WallTorchLeft.png::CompressedTexture2D::5361275518502357755::1711677176::1711677176::1::::<><>::
-wall_torch_left.gd::GDScript::-1::1711678643::0::1::::<>Sprite2D<>::
-wall_torch_left.tscn::PackedScene::5996370398194947651::1711681854::0::1::::<><>::uid://cinbooypnotpr::::res://Map Assets/WallTorchLeft.png<>res://Map Assets/wall_torch_left.gd<>uid://vhki1ammus76::::res://ParticleEffects/fire2.tscn
-::res://ParticleEffects/::1711681854
+wall_torch.gd::GDScript::-1::1711929194::0::1::::<>Sprite2D<>::
+wall_torch.tscn::PackedScene::5996370398194947651::1711934700::0::1::::<><>::uid://cinbooypnotpr::::res://Map Assets/WallTorch.png<>res://Map Assets/wall_torch.gd<>uid://vhki1ammus76::::res://ParticleEffects/fire2.tscn
+::res://ParticleEffects/::1711934700
 char.tscn::PackedScene::290687638625688708::1711583829::0::1::::<><>::
-fire2.tscn::PackedScene::1489039183125175175::1711681854::0::1::::<><>::
+fire2.tscn::PackedScene::1489039183125175175::1711934700::0::1::::<><>::
+fire3.tscn::PackedScene::2377777816598829894::1711934700::0::1::::<><>::
 fire.tscn::PackedScene::3279765390456141768::1711641334::0::1::::<><>::
 particle_effects.tscn::PackedScene::4792871231745942148::1711583872::0::1::::<><>::uid://ee2t242i5va7::::res://ParticleEffects/char.tscn<>uid://bmy0iy4ksrhs7::::res://ParticleEffects/fire.tscn
-::res://Player/::1711681881
-Player.gd::GDScript::-1::1711669953::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::6960089050386352041::1711681881::0::1::::<><>::res://Player/Player.gd<>uid://crfyhovagss0b::::res://Player/Torch.png<>uid://vhki1ammus76::::res://ParticleEffects/fire2.tscn
+wind.tscn::PackedScene::3902857906242890407::1711934700::0::1::::<><>::
+::res://Player/::1711934700
+Player.gd::GDScript::-1::1711931732::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::6960089050386352041::1711934700::0::1::::<><>::res://Player/Player.gd<>uid://crfyhovagss0b::::res://Player/Torch.png<>uid://vhki1ammus76::::res://ParticleEffects/fire2.tscn
 Torch.png::CompressedTexture2D::5977844074163322827::1711639545::1711677467::1::::<><>::
-::res://Tilemap/::1711682176
+::res://Tilemap/::1711932429
 DungeonTilemap.tscn::PackedScene::5803364659615217114::1711672488::0::1::::<><>::uid://dwfqtas83xbvk::::res://Tilemap/DungeonTileset.tres
 DungeonTileset1.png::CompressedTexture2D::6882885151224492369::1711657797::1711657797::1::::<><>::
 DungeonTileset2.png::CompressedTexture2D::4829136884192649567::1711682176::1711682176::1::::<><>::
@@ -37,4 +42,4 @@ DungeonTileset3.png::CompressedTexture2D::8227981169941536735::1711682176::17116
 DungeonTileset4.png::CompressedTexture2D::285209702574114386::1711682176::1711682176::1::::<><>::
 DungeonTileset5.png::CompressedTexture2D::6269284037288115287::1711682176::1711682176::1::::<><>::
 DungeonTileset6.png::CompressedTexture2D::4312532534949868394::1711682176::1711682176::1::::<><>::
-DungeonTileset.tres::TileSet::8714743931198942704::1711681432::0::1::::<><>::uid://c5ced3pah5m5f::::res://Tilemap/DungeonTileset1.png
+DungeonTileset.tres::TileSet::8714743931198942704::1711932429::0::1::::<><>::uid://c5ced3pah5m5f::::res://Tilemap/DungeonTileset1.png
