@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c77eh6mc5kjap"]
+
+[ext_resource type="PackedScene" uid="uid://coxgtkxdjbq0q" path="res://Tilemap/DungeonTilemap.tscn" id="1_plt72"]
+[ext_resource type="PackedScene" uid="uid://c6frwde45xrmv" path="res://Player/Player.tscn" id="2_i07q5"]
+[ext_resource type="PackedScene" uid="uid://cu780doimpt5o" path="res://Map Assets/campfire.tscn" id="3_6eg4x"]
+
+[node name="Level" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.764706, 0.462745, 0.152941, 1)
+energy = 0.7
+blend_mode = 1
+
+[node name="DungeonTilemap" parent="." instance=ExtResource("1_plt72")]
+position = Vector2(147.223, 161.231)
+
+[node name="Player" parent="." instance=ExtResource("2_i07q5")]
+position = Vector2(98, 257)
+
+[node name="Campfire" parent="." instance=ExtResource("3_6eg4x")]
+position = Vector2(103, 222)

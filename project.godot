@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Torch Game"
-run/main_scene="res://Levels/test_level.tscn"
+run/main_scene="res://Levels/level_one.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="res://Misc/TorchBig.png"
+config/icon="res://Misc/TorchIcon.png"
+boot_splash/minimum_display_time=1600
 
 [autoload]
 
@@ -27,6 +29,10 @@ window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="res://Misc/Retro Gaming.ttf"
 
 [input]
 

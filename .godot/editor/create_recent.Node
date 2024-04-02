@@ -1,3 +1,4 @@
+ColorRect
 VBoxContainer
 Label
 CollisionShape2D
@@ -10,6 +11,4 @@ Node
 Sprite2D
 CanvasLayer
 AnimationPlayer
-ColorRect
 GPUParticles3D
-Line2D

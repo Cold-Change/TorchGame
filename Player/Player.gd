@@ -30,12 +30,15 @@ func _on_fire_hurt_box_area_entered(area):
 	if area.collision_layer == 2:
 		death()
 	elif area.collision_layer == 4:
+		get_tree().paused = true
 		await Transitions.FadeToBlack()
+		get_tree().paused = false
 		if next_level:
 			get_tree().change_scene_to_packed(next_level)
 		else:
 			get_tree().change_scene_to_file("res://Levels/game_over.tscn")
 		Transitions.FadeFromBlack()
+		
 
 func death():
 	print("Player dies")

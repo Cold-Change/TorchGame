@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmyg7pu41ksyw"]
+[gd_scene load_steps=9 format=3 uid="uid://bmyg7pu41ksyw"]
 
 [ext_resource type="PackedScene" uid="uid://coxgtkxdjbq0q" path="res://Tilemap/DungeonTilemap.tscn" id="1_r1iws"]
 [ext_resource type="PackedScene" uid="uid://c6frwde45xrmv" path="res://Player/Player.tscn" id="2_y2r3d"]
 [ext_resource type="PackedScene" uid="uid://cu780doimpt5o" path="res://Map Assets/campfire.tscn" id="3_m5mgr"]
+[ext_resource type="PackedScene" uid="uid://dsyv5x1pyn1q2" path="res://Levels/level_two.tscn" id="3_nh3s4"]
 [ext_resource type="PackedScene" uid="uid://croxlydof5b5d" path="res://Map Assets/wall_torch.tscn" id="4_xi3lq"]
 [ext_resource type="PackedScene" uid="uid://n2qu8qoqg138" path="res://Map Assets/portal.tscn" id="5_wc7lp"]
+[ext_resource type="PackedScene" uid="uid://cidu3uwrohvvj" path="res://Fan/fan_up.tscn" id="6_5xknb"]
+[ext_resource type="PackedScene" uid="uid://b8ciauolctmg7" path="res://Fan/fan_down.tscn" id="7_p0xx6"]
 
 [node name="LevelOne" type="Node2D"]
 y_sort_enabled = true
@@ -22,7 +25,8 @@ layer_2/tile_data = PackedInt32Array(-65529, 262144, 2, 7, 458752, 1, 65542, 458
 layer_3/tile_data = PackedInt32Array(-1572865, 262145, 1, -1703936, 262145, 1, -1769472, 262145, 1, -1835007, 262145, 1, -1900543, 262145, 1, -1966078, 262145, 1, -2031614, 262145, 1, -2097149, 262145, 1, -2162685, 262145, 1, -2228220, 262145, 1, -2293756, 262145, 1, -2359291, 262145, 1, -2424827, 262145, 1, -2490362, 262145, 1, -2555898, 262145, 1, -2621433, 262145, 1, -2686969, 262145, 1, -2752504, 262145, 1, -2818040, 262145, 1, -2883575, 262145, 1, -2949111, 262145, 1, -3014646, 262145, 1, -3080182, 262145, 1, -3145717, 262145, 1, -3211253, 262145, 1, -3211252, 327681, 1, -3145715, 327681, 1, -3080179, 327681, 1, -3014642, 327681, 1, -2949106, 327681, 1, -2883569, 327681, 1, -2818033, 327681, 1, -2752496, 327681, 1, -2686960, 327681, 1, -2621423, 327681, 1, -2555887, 327681, 1, -2490350, 327681, 1, -2424814, 327681, 1, -2359277, 327681, 1, -2293741, 327681, 1, -2228204, 327681, 1, -2162668, 327681, 1, -2097131, 327681, 1, -2031595, 327681, 1, -1966058, 327681, 1, -1900522, 327681, 1, -1834985, 327681, 1, -1769449, 327681, 1, -1703912, 327681, 1, -1638376, 327681, 1, -1572839, 327681, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_y2r3d")]
-position = Vector2(98, 258)
+position = Vector2(100, 260)
+next_level = ExtResource("3_nh3s4")
 
 [node name="Campfire" parent="." instance=ExtResource("3_m5mgr")]
 position = Vector2(103, 222)
@@ -122,4 +126,12 @@ scale = Vector2(-1, 1)
 
 [node name="Portal" parent="." instance=ExtResource("5_wc7lp")]
 position = Vector2(653, -78)
+scale = Vector2(-1, 1)
+
+[node name="FanUp" parent="." instance=ExtResource("6_5xknb")]
+position = Vector2(746, 151)
+scale = Vector2(-1, 1)
+
+[node name="FanDown" parent="." instance=ExtResource("7_p0xx6")]
+position = Vector2(621, 105)
 scale = Vector2(-1, 1)

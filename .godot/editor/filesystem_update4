@@ -1,9 +1,11 @@
-res://Levels/level_one.tscn
-res://Tilemap/DungeonTileset.tres
-res://Map Assets/button.tscn
-res://Map Assets/portal.tscn
-res://Player/Player.tscn
-res://Player/Player.gd
-res://Levels/game_over.tscn
 res://Levels/test_level.tscn
-res://Tilemap/DungeonTilemap.tscn
+res://Tilemap/DungeonTileset.tres
+res://Player/Player.tscn
+res://Levels/level_one.tscn
+res://Levels/level_two.tscn
+res://Map Assets/campfire.tscn
+res://Levels/level.tscn
+res://Levels/level_three.tscn
+res://Autoload/Transitions.tscn
+res://Fan/fan_up.tscn
+res://Fan/fan_down.tscn

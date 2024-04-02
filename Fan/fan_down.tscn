@@ -73,9 +73,17 @@ frame = 1
 offset = Vector2(0, -16)
 
 [node name="Wind" parent="AnimatedSprite2D" instance=ExtResource("2_weo1p")]
+visible = false
 z_index = 1
 position = Vector2(-9, -12)
 scale = Vector2(2, 2)
+
+[node name="Wind2" parent="AnimatedSprite2D" instance=ExtResource("2_weo1p")]
+z_index = 1
+position = Vector2(-9, -12)
+scale = Vector2(2, 2)
+amount = 30
+trail_enabled = false
 
 [node name="HitBox" type="Area2D" parent="AnimatedSprite2D"]
 z_index = 1

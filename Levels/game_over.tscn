@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://ciqf7sko2vxqb"]
+[gd_scene load_steps=4 format=3 uid="uid://ciqf7sko2vxqb"]
+
+[ext_resource type="PackedScene" uid="uid://842whfano00q" path="res://ParticleEffects/fire3.tscn" id="1_f7qo5"]
+[ext_resource type="PackedScene" uid="uid://cidu3uwrohvvj" path="res://Fan/fan_up.tscn" id="2_7n0d6"]
+[ext_resource type="PackedScene" uid="uid://b8ciauolctmg7" path="res://Fan/fan_down.tscn" id="3_gdggx"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -7,6 +11,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -35,3 +48,23 @@ theme_override_font_sizes/font_size = 36
 text = "Thank you for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Fire" parent="." instance=ExtResource("1_f7qo5")]
+position = Vector2(184, 156)
+
+[node name="Fire2" parent="." instance=ExtResource("1_f7qo5")]
+position = Vector2(460, 158)
+
+[node name="FanUp" parent="." instance=ExtResource("2_7n0d6")]
+position = Vector2(27, 336)
+
+[node name="FanUp2" parent="." instance=ExtResource("2_7n0d6")]
+position = Vector2(616, 340)
+scale = Vector2(-1, 1)
+
+[node name="FanDown" parent="." instance=ExtResource("3_gdggx")]
+position = Vector2(616, 32)
+
+[node name="FanDown2" parent="." instance=ExtResource("3_gdggx")]
+position = Vector2(23, 32)
+scale = Vector2(-1, 1)

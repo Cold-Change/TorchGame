@@ -29,9 +29,17 @@ texture = ExtResource("1_rkx8q")
 offset = Vector2(0, -14)
 
 [node name="Wind" parent="FanUp" instance=ExtResource("2_weo1p")]
+visible = false
 position = Vector2(-9, -8)
 rotation = -2.0944
 scale = Vector2(2, 2)
+
+[node name="Wind2" parent="FanUp" instance=ExtResource("2_weo1p")]
+position = Vector2(-9, -8)
+rotation = -2.0944
+scale = Vector2(2, 2)
+amount = 30
+trail_enabled = false
 
 [node name="HitBox" type="Area2D" parent="FanUp"]
 z_index = 1
