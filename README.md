@@ -1,2 +1,3 @@
 # TorchGame
-Initialize repository
+Game about a little torch
+Godot 4.2
